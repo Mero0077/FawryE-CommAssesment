@@ -3,7 +3,7 @@
 ## Overview
 E-Commerce Mini Checkout System . It’s designed to demonstrate solid OOP design in a clear and practical way.
 
-## Design Thoughts
+## 📌 Design Thoughts
 Abstract Product:The Product class is abstract because you never buy a generic product — only real ones like ShippableProduct or ExpirableShippableProduct.
 
 Interfaces:I used interfaces for shipping and expiry instead of extra base classes. This keeps the design flexible — a product can easily have shipping, expiry, or both.
