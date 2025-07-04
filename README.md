@@ -4,24 +4,29 @@
 E-Commerce Mini Checkout System . It’s designed to demonstrate solid OOP design in a clear and practical way.
 
 ## Design Thoughts
-Abstract product: Product is made abstract because it’s just a blueprint — you never buy a generic product, only concrete ones like ShippableProduct or ExpirableShippableProduct.
+Abstract Product:The Product class is abstract because you never buy a generic product — only real ones like ShippableProduct or ExpirableShippableProduct.
 
-Interfaces: Instead of class, I used interfaces for expiry and shipping. This keeps capabilities flexible — a product can easily combine features without complicated base classes.
+Interfaces:I used interfaces for shipping and expiry instead of extra base classes. This keeps the design flexible — a product can easily have shipping, expiry, or both.
 
-Virtual methods: Common behaviors like IsAvailable and IsExpired can be customized later by overriding. This makes it easy to add new product rules without rewriting everything.
+Virtual Methods:Common checks like IsAvailable and IsExpired can be overridden later. This makes it easy to change rules without rewriting the whole class.
 
-The design sticks to clear constructor usage, simple checks, and readable flow.
+Simple Structure:Each class has one clear job. The code uses clean constructors and easy-to-follow checks.
+
+
 
 ## Highlights
-This project shows an understanding of:
+Encapsulation:
+Each class controls its own data and behavior.
 
-Encapsulation: Each class owns its own data and behavior.
+Inheritance & Interfaces:
+Clear mix of an abstract base class and interfaces for flexible features.
 
-Inheritance & Interfaces: Clear mix of abstract base class and interfaces for flexible behaviors.
+Polymorphism:
+Virtual methods make it easy to extend or customize.
 
-Polymorphism: Virtual methods make it easy to extend or override.
+Composition:
+The cart holds cart items; shipping works on any product that supports shipping.
 
-Composition: The cart has cart items; shipping works on any shippable product list.
-
-Single Responsibility: Each class has a clear, focused job.
+Single Responsibility:
+Every class does one thing only.
 
