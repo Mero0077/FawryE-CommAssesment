@@ -9,20 +9,28 @@ namespace FawryE_CommAssesment2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello!\n");
+            try
+            {
 
-            var cheese = new ExpirableShippableProduct("Cheese", 100, 5, DateTime.Now.AddDays(10), 0.2);
-            var biscuits = new ShippableProduct("Biscuits", 150, 5, 0.7);
+                Console.WriteLine("Hello!\n");
 
-            var customer = new Customer("Lily", 1000);
-            var cart = new Cart();
+                var cheese = new ExpirableShippableProduct("Cheese", 100, 5, DateTime.Now.AddDays(10), 0.2);
+                var biscuits = new ShippableProduct("Biscuits", 150, 5, 0.7);
 
-            cart.Add(cheese, 2);
-            cart.Add(biscuits, 1);
+                var customer = new Customer("Lily", 1000);
+                var cart = new Cart();
 
-            var shippingService = new ShippingService();
+                cart.Add(cheese, 2);
+                cart.Add(biscuits, 1);
 
-            cart.Checkout(customer, shippingService);
+                var shippingService = new ShippingService();
+
+                cart.Checkout(customer, shippingService);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error:{ex.Message}");
+            }
         }
     }
 }
